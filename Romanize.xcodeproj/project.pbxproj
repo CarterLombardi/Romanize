@@ -13,8 +13,9 @@
 		AD527D6224CACFD4005A714D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD527D6124CACFD4005A714D /* Assets.xcassets */; };
 		AD527D6524CACFD4005A714D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD527D6424CACFD4005A714D /* Preview Assets.xcassets */; };
 		AD527D6824CACFD4005A714D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD527D6624CACFD4005A714D /* LaunchScreen.storyboard */; };
-		AD527D7324CACFD4005A714D /* RomanizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD527D7224CACFD4005A714D /* RomanizeTests.swift */; };
+		AD527D7324CACFD4005A714D /* AlphabetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD527D7224CACFD4005A714D /* AlphabetTests.swift */; };
 		AD527D7E24CACFD4005A714D /* RomanizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD527D7D24CACFD4005A714D /* RomanizeUITests.swift */; };
+		AD527D8C24CBF7EE005A714D /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD527D8B24CBF7EE005A714D /* Alphabet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +45,12 @@
 		AD527D6724CACFD4005A714D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD527D6924CACFD4005A714D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD527D6E24CACFD4005A714D /* RomanizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RomanizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD527D7224CACFD4005A714D /* RomanizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanizeTests.swift; sourceTree = "<group>"; };
+		AD527D7224CACFD4005A714D /* AlphabetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetTests.swift; sourceTree = "<group>"; };
 		AD527D7424CACFD4005A714D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD527D7924CACFD4005A714D /* RomanizeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RomanizeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD527D7D24CACFD4005A714D /* RomanizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanizeUITests.swift; sourceTree = "<group>"; };
 		AD527D7F24CACFD4005A714D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD527D8B24CBF7EE005A714D /* Alphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				AD527D6624CACFD4005A714D /* LaunchScreen.storyboard */,
 				AD527D6924CACFD4005A714D /* Info.plist */,
 				AD527D6324CACFD4005A714D /* Preview Content */,
+				AD527D8B24CBF7EE005A714D /* Alphabet.swift */,
 			);
 			path = Romanize;
 			sourceTree = "<group>";
@@ -121,7 +124,7 @@
 		AD527D7124CACFD4005A714D /* RomanizeTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD527D7224CACFD4005A714D /* RomanizeTests.swift */,
+				AD527D7224CACFD4005A714D /* AlphabetTests.swift */,
 				AD527D7424CACFD4005A714D /* Info.plist */,
 			);
 			path = RomanizeTests;
@@ -269,6 +272,7 @@
 			files = (
 				AD527D5C24CACFD3005A714D /* AppDelegate.swift in Sources */,
 				AD527D5E24CACFD3005A714D /* SceneDelegate.swift in Sources */,
+				AD527D8C24CBF7EE005A714D /* Alphabet.swift in Sources */,
 				AD527D6024CACFD3005A714D /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD527D7324CACFD4005A714D /* RomanizeTests.swift in Sources */,
+				AD527D7324CACFD4005A714D /* AlphabetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

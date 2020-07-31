@@ -19,19 +19,16 @@ class Alphabet {
 
 class Letter: Equatable {
     
-    var original: String!
-    var romanized: String!
-    var soundCase: LetterSound?
+    var original: String
+    var romanized: String
+    var soundCase: LetterSound
+    var difficultyLevel: Int
     
-    init(original: String, romanized: String) {
-        self.original = original
-        self.romanized = romanized
-    }
-    
-    init(original: String, romanized: String, sound: LetterSound) {
+    init(original: String, romanized: String, sound: LetterSound, diffculty: Int = 0) {
         self.original = original
         self.romanized = romanized
         self.soundCase = sound
+        self.difficultyLevel = diffculty
     }
     
     //Equatable
@@ -39,6 +36,7 @@ class Letter: Equatable {
         guard lhs.original == rhs.original else {return false}
         guard lhs.romanized == rhs.romanized else {return false}
         guard lhs.soundCase == rhs.soundCase else {return false}
+        guard lhs.difficultyLevel == rhs.difficultyLevel else {return false}
         
         return true
     }
@@ -49,6 +47,6 @@ enum LetterSound {
 }
 
 extension Alphabet {
-    var consonants: [Letter]? {return self.letterSet.filter({letter in return letter.soundCase == .consonant})}
-    var vowels: [Letter]? {return self.letterSet.filter({letter in return letter.soundCase == .vowel})}
+    var consonants: [Letter]? { return self.letterSet.filter({letter in return letter.soundCase == .consonant}) }
+    var vowels: [Letter]? { return self.letterSet.filter({letter in return letter.soundCase == .vowel}) }
 }

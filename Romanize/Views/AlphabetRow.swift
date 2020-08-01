@@ -28,6 +28,7 @@ struct AlphabetRow: View {
             }
             Spacer()
             Text(progressString)
+                .font(.caption)
         }.padding()
     }
 }
@@ -36,9 +37,9 @@ struct AlphabetRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             AlphabetRow(originalTitle: "한글", romanizedTitle: "Hangul", progressString: "25.3%")
-                .previewLayout(.fixed(width: 300, height: 70))
-            AlphabetRow(originalTitle: "Кириллица", romanizedTitle: "Cyrillic", progressString: "11.9%")
-                .previewLayout(.fixed(width: 300, height: 70))
+            AlphabetRow(originalTitle: "лца", romanizedTitle: "Cyrillic", progressString: "11.9%")
+                
         }
+        .previewLayout(.fixed(width: 350, height: 80))
     }
 }

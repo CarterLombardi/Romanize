@@ -22,13 +22,13 @@ class Letter: Equatable {
     var original: String
     var romanized: String
     var soundCase: LetterSound
-    var difficultyLevel: Int
+    var difficulty: difficultyTier
     
-    init(original: String, romanized: String, sound: LetterSound, diffculty: Int = 0) {
+    init(original: String, romanized: String, sound: LetterSound, diffculty: difficultyTier = .normal) {
         self.original = original
         self.romanized = romanized
         self.soundCase = sound
-        self.difficultyLevel = diffculty
+        self.difficulty = diffculty
     }
     
     //Equatable
@@ -36,7 +36,7 @@ class Letter: Equatable {
         guard lhs.original == rhs.original else {return false}
         guard lhs.romanized == rhs.romanized else {return false}
         guard lhs.soundCase == rhs.soundCase else {return false}
-        guard lhs.difficultyLevel == rhs.difficultyLevel else {return false}
+        guard lhs.difficulty == rhs.difficulty else {return false}
         
         return true
     }
@@ -44,6 +44,10 @@ class Letter: Equatable {
 
 enum LetterSound {
     case consonant, vowel
+}
+
+enum difficultyTier {
+    case normal, special, advanced, modified
 }
 
 extension Alphabet {

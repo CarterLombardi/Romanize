@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD009BA924D659FB00B4EEF4 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD009BA824D659FB00B4EEF4 /* Lesson.swift */; };
+		AD009BAD24D65A8500B4EEF4 /* Alphabets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD009BAC24D65A8500B4EEF4 /* Alphabets.swift */; };
 		AD4D029724D3D07D001DB1D8 /* AlphabetRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4D029624D3D07D001DB1D8 /* AlphabetRow.swift */; };
 		AD527D5C24CACFD3005A714D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD527D5B24CACFD3005A714D /* AppDelegate.swift */; };
 		AD527D5E24CACFD3005A714D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD527D5D24CACFD3005A714D /* SceneDelegate.swift */; };
@@ -20,7 +22,6 @@
 		ADC7FF8324D53A4E002A99B1 /* LessonSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7FF8224D53A4E002A99B1 /* LessonSelectorView.swift */; };
 		ADC7FF8524D53AAD002A99B1 /* LessonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7FF8424D53AAD002A99B1 /* LessonRow.swift */; };
 		ADC7FF8724D53ABC002A99B1 /* LessonHeadingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADC7FF8624D53ABC002A99B1 /* LessonHeadingRow.swift */; };
-		ADE6F5A424CC0475001A9F24 /* Hangul.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE6F5A324CC0475001A9F24 /* Hangul.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD009BA824D659FB00B4EEF4 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		AD009BAC24D65A8500B4EEF4 /* Alphabets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alphabets.swift; sourceTree = "<group>"; };
 		AD4D029624D3D07D001DB1D8 /* AlphabetRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetRow.swift; sourceTree = "<group>"; };
 		AD527D5824CACFD3005A714D /* Romanize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Romanize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD527D5B24CACFD3005A714D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +63,6 @@
 		ADC7FF8224D53A4E002A99B1 /* LessonSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonSelectorView.swift; sourceTree = "<group>"; };
 		ADC7FF8424D53AAD002A99B1 /* LessonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRow.swift; sourceTree = "<group>"; };
 		ADC7FF8624D53ABC002A99B1 /* LessonHeadingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonHeadingRow.swift; sourceTree = "<group>"; };
-		ADE6F5A324CC0475001A9F24 /* Hangul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangul.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				AD527D8B24CBF7EE005A714D /* Alphabet.swift */,
-				ADE6F5A324CC0475001A9F24 /* Hangul.swift */,
+				AD009BAC24D65A8500B4EEF4 /* Alphabets.swift */,
+				AD009BA824D659FB00B4EEF4 /* Lesson.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,12 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD009BAD24D65A8500B4EEF4 /* Alphabets.swift in Sources */,
 				AD527D5C24CACFD3005A714D /* AppDelegate.swift in Sources */,
 				ADC7FF8324D53A4E002A99B1 /* LessonSelectorView.swift in Sources */,
 				ADC7FF8724D53ABC002A99B1 /* LessonHeadingRow.swift in Sources */,
 				AD4D029724D3D07D001DB1D8 /* AlphabetRow.swift in Sources */,
 				AD527D5E24CACFD3005A714D /* SceneDelegate.swift in Sources */,
-				ADE6F5A424CC0475001A9F24 /* Hangul.swift in Sources */,
+				AD009BA924D659FB00B4EEF4 /* Lesson.swift in Sources */,
 				AD527D8C24CBF7EE005A714D /* Alphabet.swift in Sources */,
 				ADC7FF8524D53AAD002A99B1 /* LessonRow.swift in Sources */,
 				AD527D6024CACFD3005A714D /* AlphabetSelectorView.swift in Sources */,

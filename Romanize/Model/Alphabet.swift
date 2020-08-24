@@ -9,11 +9,22 @@
 import Foundation
 
 
-class Alphabet {
+class Alphabet: Identifiable {
+
+    var originalTitleRepresentation: String
+    var romanizedTitle: String
+    var progressRepresentation: String
+    
+    var id: String { return romanizedTitle }
+    
     var letterSet: [Letter]!
     
-    init(letterSet: [Letter]) {
+    init(title: String, titleOrginal: String, letterSet: [Letter]) {
         self.letterSet = letterSet
+        self.originalTitleRepresentation = titleOrginal
+        self.romanizedTitle = title
+        //TODO: Replace tmp implementation
+        self.progressRepresentation = "25.3%"
     }
 }
 

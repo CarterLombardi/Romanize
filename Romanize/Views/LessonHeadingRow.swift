@@ -17,7 +17,7 @@ struct LessonHeadingRow: View {
         HStack {
             Text("\(headingIndex). \(headingString)")
                 .bold()
-                .font(.largeTitle)
+                .font(.title)
             Spacer()
         }.padding()
     }

@@ -9,10 +9,18 @@
 import SwiftUI
 
 struct AlphabetSelectorView: View {
+    
+    public var alphabets: [Alphabet] = Alphabets.allAlphabets
+    
     var body: some View {
-        List {
-            AlphabetRow(originalTitle: "한글", romanizedTitle: "Hangul", progressString: "25.3%")
-            AlphabetRow(originalTitle: "лца", romanizedTitle: "Cyrillic", progressString: "11.9%")
+        NavigationView {
+            List(alphabets) { alphabet in
+                NavigationLink(destination: LessonSelectorView(alphabet: alphabet)) {
+                    AlphabetRow(originalTitle: alphabet.originalTitleRepresentation,
+                                romanizedTitle: alphabet.romanizedTitle,
+                                progressString: alphabet.progressRepresentation)
+                }
+            }.navigationBarTitle("Alphabets")
         }
     }
 }

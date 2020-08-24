@@ -20,7 +20,7 @@ struct LessonRow: View {
             Text(lessonName)
                 .bold()
                 .fontWeight(.bold)
-                .font(.title)
+                .font(.body)
             Text("\(progressNumerator)/\(progressDenominator)")
                 .fontWeight(.light)
                 .font(.caption)

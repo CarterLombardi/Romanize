@@ -15,7 +15,7 @@ class RomanizeTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        AlphabetSUT = Alphabet(letterSet: [
+        AlphabetSUT = Alphabet(title: "Hangul", titleOrginal: "한굴", letterSet: [
             Letter(original: "ㅂ", romanized: "B", sound: .consonant),
             Letter(original: "ㅣ", romanized: "I", sound: .vowel)])
     }

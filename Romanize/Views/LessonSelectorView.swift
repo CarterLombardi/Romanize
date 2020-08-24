@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct LessonSelectorView: View {
+    
+    var alphabet: Alphabet
+    
     var body: some View {
         List {
             LessonHeadingRow(headingIndex: 1, headingString: "Learn the letters")
@@ -19,12 +22,12 @@ struct LessonSelectorView: View {
             LessonRow(lessonName: "Letters", progressNumerator: 0, progressDenominator: 0)
             LessonRow(lessonName: "Words", progressNumerator: 0, progressDenominator: 0)
             LessonRow(lessonName: "Cognates", progressNumerator: 0, progressDenominator: 0)
-        }
+        }.navigationBarTitle(alphabet.romanizedTitle)
     }
 }
 
 struct LessonSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonSelectorView().colorScheme(.dark)
+        LessonSelectorView(alphabet: Alphabets.Hangul).colorScheme(.dark)
     }
 }

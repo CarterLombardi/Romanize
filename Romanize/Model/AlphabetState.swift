@@ -15,13 +15,3 @@ class AlphabetState {
         self.lessonProgress = lessonProgress
     }
 }
-
-class LessonState {
-    var totalActions: Int
-    var completedActions: Int
-    
-    init(totalActions: Int, completedActions: Int = 0) {
-        self.totalActions = totalActions
-        self.completedActions = completedActions
-    }
-}

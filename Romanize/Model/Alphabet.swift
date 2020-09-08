@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Alphabet: Identifiable {
+class Alphabet: Identifiable, Equatable, Hashable {
 
     var originalTitleRepresentation: String
     var romanizedTitle: String
@@ -26,9 +26,26 @@ class Alphabet: Identifiable {
         //TODO: Replace tmp implementation
         self.progressRepresentation = "25.3%"
     }
+    
+    //Equatable
+    static func ==(lhs: Alphabet, rhs: Alphabet) -> Bool {
+        guard lhs.originalTitleRepresentation == rhs.originalTitleRepresentation else {return false}
+        guard lhs.romanizedTitle == rhs.romanizedTitle else {return false}
+        guard lhs.letterSet == rhs.letterSet else {return false}
+        
+        return true
+    }
+    
+    //Hashable
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.originalTitleRepresentation)
+        hasher.combine(self.romanizedTitle)
+        hasher.combine(self.letterSet)
+    }
 }
 
-class Letter: Equatable {
+class Letter: Equatable, Hashable {
     
     var original: String
     var romanized: String
@@ -50,6 +67,14 @@ class Letter: Equatable {
         guard lhs.difficulty == rhs.difficulty else {return false}
         
         return true
+    }
+    
+    //Hashable
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.original)
+        hasher.combine(self.romanized)
+        hasher.combine(self.soundCase)
+        hasher.combine(self.difficulty)
     }
 }
 

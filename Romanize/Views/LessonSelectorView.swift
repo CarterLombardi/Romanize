@@ -11,13 +11,14 @@ import SwiftUI
 struct LessonSelectorView: View {
     
     var alphabet: Alphabet
+    var lessons: [Lesson]
     
     var body: some View {
         List {
             LessonHeadingRow(headingIndex: 1, headingString: "Learn the letters")
-            LessonRow(lessonName: "Consonants", progressNumerator: 2, progressDenominator: 53)
-            LessonRow(lessonName: "Vowels", progressNumerator: 1, progressDenominator: 19)
-            LessonRow(lessonName: "Special", progressNumerator: 0, progressDenominator: 20)
+            ForEach(lessons, id: \.self) { lesson in
+                LessonRow(lessonName: lesson.title, progressNumerator: 0, progressDenominator: lesson.letterSet.count)
+            }
             LessonHeadingRow(headingIndex: 2, headingString: "Practice")
             LessonRow(lessonName: "Letters", progressNumerator: 0, progressDenominator: 0)
             LessonRow(lessonName: "Words", progressNumerator: 0, progressDenominator: 0)
@@ -28,6 +29,6 @@ struct LessonSelectorView: View {
 
 struct LessonSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonSelectorView(alphabet: Alphabets.Hangul).colorScheme(.dark)
+        LessonSelectorView(alphabet: Alphabets.Hangul, lessons: Lessons.Hangul.Lessons).colorScheme(.dark)
     }
 }

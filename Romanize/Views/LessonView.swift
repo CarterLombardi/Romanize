@@ -10,11 +10,10 @@ import SwiftUI
 
 struct LessonView: View {
     
+    public var lesson: Lesson
+    
     @State private var isFlipped: Bool = false
     @State private var currentLetter: Letter = Letter(original: "ㅈ", romanized: "J", sound: .consonant)
-    
-    
-    public var lettersInLesson: [Letter] = Alphabets.Hangul.consonants!
     
     private func letterFinished(isCorrect: Bool) {
         
@@ -53,7 +52,7 @@ struct LessonView: View {
 
 struct LessonView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonView(lettersInLesson: [])
+        LessonView(lesson: Lessons.Hangul().Lessons.first!)
     }
 }
 

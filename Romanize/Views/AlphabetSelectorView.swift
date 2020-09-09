@@ -15,7 +15,7 @@ struct AlphabetSelectorView: View {
     var body: some View {
         NavigationView {
             List(alphabets) { alphabet in
-                NavigationLink(destination: LessonSelectorView(alphabet: alphabet, lessons: Lessons.Hangul.Lessons)) {
+                NavigationLink(destination: LessonSelectorView(alphabet: alphabet, lessons: Lessons.lessonsForAlphabet(alphabet))) {
                     AlphabetRow(originalTitle: alphabet.originalTitleRepresentation,
                                 romanizedTitle: alphabet.romanizedTitle,
                                 progressString: alphabet.progressRepresentation)

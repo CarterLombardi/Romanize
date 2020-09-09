@@ -17,7 +17,9 @@ struct LessonSelectorView: View {
         List {
             LessonHeadingRow(headingIndex: 1, headingString: "Learn the letters")
             ForEach(lessons, id: \.self) { lesson in
-                LessonRow(lessonName: lesson.title, progressNumerator: 0, progressDenominator: lesson.letterSet.count)
+                NavigationLink(destination: LessonView(lesson: lesson)) {
+                    LessonRow(lessonName: lesson.title, progressNumerator: 0, progressDenominator: lesson.letterSet.count)
+                }
             }
             LessonHeadingRow(headingIndex: 2, headingString: "Practice")
             LessonRow(lessonName: "Letters", progressNumerator: 0, progressDenominator: 0)
@@ -29,6 +31,7 @@ struct LessonSelectorView: View {
 
 struct LessonSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        LessonSelectorView(alphabet: Alphabets.Hangul, lessons: Lessons.Hangul.Lessons).colorScheme(.dark)
+        LessonSelectorView(alphabet: Alphabets.Hangul, lessons: Lessons.Hangul().Lessons).colorScheme(.dark)
     }
 }
+

@@ -45,7 +45,7 @@ class Alphabet: Identifiable, Equatable, Hashable {
     }
 }
 
-class Letter: Equatable, Hashable {
+class Letter: Equatable, Hashable, ObservableObject {
     
     var original: String
     var romanized: String

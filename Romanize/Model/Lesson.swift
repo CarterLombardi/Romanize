@@ -40,3 +40,7 @@ class Lesson: Hashable, Equatable {
         return true
     }
 }
+
+enum LessonType {
+    case presentation, rightWrong
+}

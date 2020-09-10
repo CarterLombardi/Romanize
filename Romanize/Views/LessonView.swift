@@ -13,10 +13,20 @@ struct LessonView: View {
     public var lesson: Lesson
     
     @State private var isFlipped: Bool = false
-    @State private var currentLetter: Letter = Letter(original: "ㅈ", romanized: "J", sound: .consonant)
+    @State private var currentLetter: Letter = Letter(original: "?", romanized: "?", sound: .consonant)
+    @State private var completedLetters: [Letter] = []
+    
+    private func initialize() {
+        self.currentLetter = self.lesson.letterSet.first!
+    }
     
     private func letterFinished(isCorrect: Bool) {
-        
+        //TODO: Set letter state
+        completedLetters.append(currentLetter)
+        if let nextNewLetter = lesson.letterSet.first(where: {!completedLetters.contains($0)}) {
+            currentLetter = nextNewLetter
+            isFlipped = false
+        }
     }
     
     private func buttonPressed(on button: buttonLabel) {
@@ -35,18 +45,15 @@ struct LessonView: View {
     
     var body: some View {
         VStack {
-            
-            Text(isFlipped ? currentLetter.romanized : currentLetter.original)
-                .font(.custom("LetterDisplay", size: 253))
-            
-            HStack{
-                ForEach([buttonLabel("No"),buttonLabel("Flip"), buttonLabel("Yes")]) { buttonLabel in
-                    Button(buttonLabel.id) {
-                        self.buttonPressed(on: buttonLabel)
-                    }.frame(width: 90, height: 50, alignment: .center)
-                }
+            LessonCardView(letter: currentLetter)
+                .frame(width: 350, height: 450, alignment: .center)
+            Button("Update letter: \(currentLetter.original)") {
+                self.letterFinished(isCorrect: true)
             }
+        }.onAppear {
+            self.initialize()
         }
+        .navigationBarTitle(lesson.title)
     }
 }
 

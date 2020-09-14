@@ -14,36 +14,45 @@ struct LessonCardView: View {
     @State public var isFlipped = false
     
     var body: some View {
-        VStack {
-            HStack {
-                Image(systemName: "chevron.left.2")
-                    .padding(32)
-                    .font(.custom("Arrow", size: 40))
-                    .foregroundColor(isFlipped ? .red : .white)
+        GeometryReader { geometry in
+            VStack {
+                HStack {
+                    Image(systemName: "chevron.left.2")
+                        .padding(32)
+                        .font(.custom("Arrow", size: 40))
+                        .foregroundColor(self.isFlipped ? .red : .gray)
+                    
+                    Spacer()
+                    
+                    Text(self.isFlipped ? self.letter.romanized : self.letter.original)
+                        .font(.custom("LetterDisplay", size: 150))
+                        .foregroundColor(.white)
+                        .minimumScaleFactor(0.1)
+                        .lineLimit(1)
+                    
+                    Spacer()
+                    
+                    Image(systemName: "chevron.right.2")
+                        .padding(32)
+                        .font(.custom("Arrow", size: 40))
+                        .foregroundColor(self.isFlipped ? .green : .gray)
+                    
+                }
                 
-                Spacer()
                 
-                Text(isFlipped ? letter.romanized : letter.original)
-                    .font(.custom("LetterDisplay", size: 150))
-                    .foregroundColor(.white)
+                Image(systemName: "arrow.2.circlepath.circle.fill").onTapGesture {
+                    self.isFlipped.toggle()
+                }.foregroundColor(Color.white)
+                    .font(.custom("Flip", size: 35))
+                    .foregroundColor(.black)
                 
-                Spacer()
-                
-                Image(systemName: "chevron.right.2")
-                    .padding(32)
-                    .font(.custom("Arrow", size: 40))
-                    .foregroundColor(isFlipped ? .green : .white)
-                
+            }.background(RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color(red: 0.1, green: 0.1, blue: 0.1))
+                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center))
+                .onTapGesture {
+                    self.isFlipped.toggle()
             }
-            
-            Image(systemName: "arrow.2.circlepath.circle.fill").onTapGesture {
-                self.isFlipped.toggle()
-            }
-                .font(.custom("Flip", size: 35))
-                .foregroundColor(.black)
-        }.background(RoundedRectangle(cornerRadius: 16, style: .continuous)
-            .fill(Color.gray)
-            .frame(width: 350, height: 450, alignment: .center))
+        }
     }
 }
 
